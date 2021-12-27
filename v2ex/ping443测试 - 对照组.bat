@@ -1,4 +1,4 @@
 @echo off
 title ping443ВтЪд - Ждеезщ
-tcping -t 93.184.216.34 443
+tcping -t 34.227.211.26 443
 pause

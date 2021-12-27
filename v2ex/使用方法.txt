@@ -1,0 +1,18 @@
+首先启动测试组：
+（模拟正常访问Steam商店）
+curl测试.bat ping80测试.bat ping443测试.bat
+观察到ping80测试.bat ping443测试.bat输出内容正常（Port is open）
+在curl测试.bat中按下任意键，等待请求，可观察到HTTP/1.1 200 OK输出稍多内容（正常）或输出单行错误消息（异常）。
+不断重复 在curl测试.bat中按下任意键。
+若在curl测试.bat中输出单行错误消息（异常）之前或请求中，在ping443测试.bat中出现No response，实验验证成功。
+
+接着启动对照组：
+（访问非Steam境外服务器并假装自己在访问Steam商店，即SNI伪装）
+curl测试 - 对照组.bat ping80测试 - 对照组.bat ping443测试 - 对照组.bat
+观察到ping80测试 - 对照组.bat ping443测试 - 对照组.bat输出内容正常（Port is open）
+在curl测试 - 对照组.bat中按下任意键，等待请求，可观察到HTTP/1.1 200 OK输出稍多内容（正常）或输出单行错误消息（异常）。
+不断重复 在curl测试 - 对照组.bat中按下任意键。
+若在curl测试 - 对照组.bat中输出单行错误消息（异常）之前或请求中，在ping443测试 - 对照组.bat中出现No response，实验验证成功。
+
+测试组实验证明，Steam商店受到仅当HTTPS访问时的故意连接破坏。
+对照组实验证明，针对Steam商店的破坏并不针对其服务器IP，而是对域名（即网址）的针对性打击。

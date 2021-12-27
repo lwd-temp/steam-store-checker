@@ -1,4 +1,4 @@
 @echo off
 title ping80ВтЪд - Ждеезщ
-tcping -t 93.184.216.34 80
+tcping -t 34.227.211.26 80
 pause
