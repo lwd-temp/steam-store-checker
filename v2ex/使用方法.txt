@@ -2,7 +2,7 @@
 （模拟正常访问Steam商店）
 curl测试.bat ping80测试.bat ping443测试.bat
 观察到ping80测试.bat ping443测试.bat输出内容正常（Port is open）
-在curl测试.bat中按下任意键，等待请求，可观察到HTTP/1.1 200 OK输出稍多内容（正常）或输出单行错误消息（异常）。
+在curl测试.bat中按下任意键，等待请求，可观察到* Connection #0 to host store.steampowered.com left intact（正常）或输出含errno字样的单行错误消息（异常）。
 不断重复 在curl测试.bat中按下任意键。
 若在curl测试.bat中输出单行错误消息（异常）之前或请求中，在ping443测试.bat中出现No response，实验验证成功。
 
@@ -10,7 +10,7 @@ curl测试.bat ping80测试.bat ping443测试.bat
 （访问非Steam境外服务器并假装自己在访问Steam商店，即SNI伪装）
 curl测试 - 对照组.bat ping80测试 - 对照组.bat ping443测试 - 对照组.bat
 观察到ping80测试 - 对照组.bat ping443测试 - 对照组.bat输出内容正常（Port is open）
-在curl测试 - 对照组.bat中按下任意键，等待请求，可观察到HTTP/1.1 200 OK输出稍多内容（正常）或输出单行错误消息（异常）。
+在curl测试 - 对照组.bat中按下任意键，等待请求，可观察到* Connection #0 to host store.steampowered.com left intact（正常）或输出含errno字样的单行错误消息（异常）。
 不断重复 在curl测试 - 对照组.bat中按下任意键。
 若在curl测试 - 对照组.bat中输出单行错误消息（异常）之前或请求中，在ping443测试 - 对照组.bat中出现No response，实验验证成功。
 
