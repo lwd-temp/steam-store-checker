@@ -1,1 +1,1 @@
-pyinstaller -F start.py -p curl.bat -p curl.exe -p tcping.bat -p tcping.exe
+pyinstaller -F start.py --add-data ".\\res\\*;.\\"
