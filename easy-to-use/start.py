@@ -134,7 +134,7 @@ def help():
 
 def main():
     print("store.steampowered.com连接测试工具包启动器")
-    print("（又名“Steam商店连接测试工具”）")
+    print("（即“Steam商店连接测试工具”）")
     print("工作目录：" + os.getcwd())
     printHorizontalLine()
     print("请选择操作：")
