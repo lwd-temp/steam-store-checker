@@ -9,7 +9,7 @@ if os.name != "nt":
     sys.exit()
 
 steamStoreDomain = "store.steampowered.com"
-hkGovDomain = "www.gov.hk"
+baiduJPDomain = "www.baidu.jp"
 helpText = """概念解读：
 当我们访问一个网站时，我们事实上连接了那个网站的服务器。
 IP地址用于标记服务器“位置”，而端口用于标记服务器的服务。
@@ -54,12 +54,12 @@ def queryDNS(domain):
 
 
 def callCurlBat(domain, ip, port):
-    os.system("start cmd curl.bat " + str(domain) +
+    os.system("start curl.bat " + str(domain) +
               " " + str(ip) + " " + str(port))
 
 
 def callTcpingBat(ip, port):
-    os.system("start cmd tcping.bat " + str(ip) + " " + str(port))
+    os.system("start tcping.bat " + str(ip) + " " + str(port))
 
 
 def printHorizontalLine():
@@ -84,17 +84,17 @@ def stdConn():
     main()
 
 
-def hkConn():
-    print("访问store.steampowered.com，但将其IP解析为香港特别行政区政府官网服务器")
-    print("解析香港特别行政区政府官网域名...")
-    hkGovIP = queryDNS(hkGovDomain)
-    print(hkGovIP)
+def bdJPConn():
+    print("访问store.steampowered.com，但将其IP解析为百度日本服务器")
+    print("解析百度日本域名...")
+    baiduJPIP = queryDNS(baiduJPDomain)
+    print(baiduJPIP)
     print("唤起Tcping80端口测试脚本...")
-    callTcpingBat(hkGovIP, 80)
+    callTcpingBat(baiduJPIP, 80)
     print("唤起Tcping443端口测试脚本...")
-    callTcpingBat(hkGovIP, 443)
+    callTcpingBat(baiduJPIP, 443)
     print("唤起Curl测试脚本...")
-    callCurlBat(steamStoreDomain, hkGovIP, 443)
+    callCurlBat(steamStoreDomain, baiduJPIP, 443)
     printHorizontalLine()
     print("请在新窗口中获取帮助及操作。")
     input("按回车键回到主菜单...")
@@ -133,7 +133,7 @@ def main():
     printHorizontalLine()
     print("请选择操作：")
     print("[1]常规访问store.steampowered.com")
-    print("[2]访问store.steampowered.com，但将其IP解析为香港特别行政区政府官网服务器")
+    print("[2]访问store.steampowered.com，但将其IP解析为百度日本服务器")
     print("[3]访问fuck.steampowered.com，但将其IP解析为Steam商店服务器")
     print("[4]帮助")
     print("[5]退出")
@@ -148,7 +148,7 @@ def main():
                 break
             elif choice == 2:
                 printHorizontalLine()
-                hkConn()
+                bdJPConn()
                 break
             elif choice == 3:
                 printHorizontalLine()
