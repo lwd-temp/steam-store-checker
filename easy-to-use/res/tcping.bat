@@ -6,7 +6,7 @@ set basetitle=tcping - %ip%:%port%
 
 title %basetitle%
 
-echo åœ¨æœ¬æµ‹è¯•ä¸­ï¼Œæˆ‘ä»¬ä¼šä¸æ–­æµ‹è¯•%ip%:%port%æ˜¯å¦å¯è¾¾ã€‚è‹¥ä¸å¯è¾¾ï¼Œåˆ™ä¼šæç¤ºâ€œNo Responseâ€ã€‚
+echo ÔÚ±¾²âÊÔÖĞ£¬ÎÒÃÇ»á²»¶Ï²âÊÔ%ip%:%port%ÊÇ·ñ¿É´ï¡£Èô²»¿É´ï£¬Ôò»áÌáÊ¾¡°No Response¡±¡£
 
 .\tcping.exe -t %ip% %port%
 
