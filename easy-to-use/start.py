@@ -54,12 +54,12 @@ def queryDNS(domain):
 
 
 def callCurlBat(domain, ip, port):
-    os.system("start curl.bat " + str(domain) +
+    os.system("start cmd curl.bat " + str(domain) +
               " " + str(ip) + " " + str(port))
 
 
 def callTcpingBat(ip, port):
-    os.system("start tcping.bat " + str(ip) + " " + str(port))
+    os.system("start cmd tcping.bat " + str(ip) + " " + str(port))
 
 
 def printHorizontalLine():
